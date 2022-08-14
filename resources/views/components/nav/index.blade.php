@@ -4,7 +4,7 @@
       'ltr:left-0 ltr:right-0 md:ltr:left-64 rtl:right-0 rtl:left-0 md:rtl:right-64':
           !(open)
   }"
-      class="fixed z-50 mt-0 flex flex-row flex-nowrap items-center justify-between bg-white py-2 px-6 shadow-sm transition-all duration-500 ease-in-out ltr:left-0 ltr:right-0 rtl:right-0 rtl:left-0 dark:bg-gray-800 md:ltr:left-64 md:rtl:right-64"
+      class="fixed z-50 mt-0 flex flex-row flex-nowrap items-center justify-between bg-white py-2 px-6 shadow-md transition-all duration-500 ease-in-out ltr:left-0 ltr:right-0 rtl:right-0 rtl:left-0 dark:bg-gray-800 md:ltr:left-64 md:rtl:right-64"
       id="desktop-menu">
       <!-- sidenav button-->
       <button id="navbartoggle" type="button"
@@ -58,6 +58,21 @@
 
       <!-- menu -->
       <ul class="mt-2 mt-0 flex ltr:ml-auto rtl:mr-auto">
+          <li class="relative" @click="toggleDarkMode()">
+              <a href="javascript:;" class="block flex rounded-full py-3 px-4 text-sm focus:outline-none"
+                  id="messages">
+                  amar
+                  <div class="relative mx-auto my-auto inline-block">
+                      <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                          </path>
+                      </svg>
+                  </div>
+              </a>
+          </li>
+
           <!-- messages -->
           <li x-data="{ open: false }" class="relative">
               <a href="javascript:;" class="block flex rounded-full py-3 px-4 text-sm focus:outline-none" id="messages"
