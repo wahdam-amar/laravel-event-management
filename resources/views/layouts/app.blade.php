@@ -15,20 +15,23 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans text-base font-normal text-gray-600 antialiased dark:bg-gray-800 dark:text-gray-400">
+<body
+    class="scroll-smooth font-sans text-base font-normal text-gray-600 antialiased dark:bg-gray-800 dark:text-gray-400">
     <div class="min-h-screen bg-gray-100">
-        @include('layouts.navigation')
+        {{-- @include('layouts.navigation') --}}
 
         <!-- Page Heading -->
-        <header class="bg-white shadow">
+        {{-- <header class="bg-white shadow">
             <div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
                 {{ $header }}
             </div>
-        </header>
+        </header> --}}
+
+        <x-sidebar />
 
         <!-- Page Content -->
 
-        <main class="wrapper overflow-x-hidden bg-gray-100 dark:bg-gray-900 dark:bg-opacity-40">
+        <main x-data="main()" class="wrapper overflow-x-hidden bg-gray-100 dark:bg-gray-900 dark:bg-opacity-40">
             {{ $slot }}
         </main>
     </div>
