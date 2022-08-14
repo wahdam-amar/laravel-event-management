@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="ltr">
 
 <head>
     <meta charset="utf-8">
@@ -17,7 +17,8 @@
 
 <body
     class="scroll-smooth font-sans text-base font-normal text-gray-600 antialiased dark:bg-gray-800 dark:text-gray-400">
-    <div class="min-h-screen bg-gray-100">
+    <div class="wrapper min-h-screen overflow-x-hidden bg-gray-100 dark:bg-gray-900 dark:bg-opacity-40"
+        x-data="main()">
         {{-- @include('layouts.navigation') --}}
 
         <!-- Page Heading -->
@@ -27,13 +28,33 @@
             </div>
         </header> --}}
 
+
         <x-sidebar />
 
-        <!-- Page Content -->
+        <div x-bind:aria-expanded="open"
+            :class="{
+                'ltr:ml-64 ltr:-mr-64 md:ltr:ml-0 md:ltr:mr-0 rtl:mr-64 rtl:-ml-64 md:rtl:mr-0 md:rtl:ml-0': open,
+                'ltr:ml-0 ltr:mr-0 md:ltr:ml-64 rtl:mr-0 rtl:ml-0 md:rtl:mr-64':
+                    !(open)
+            }"
+            class="flex min-h-screen flex-col transition-all duration-500 ease-in-out ltr:ml-0 ltr:mr-0 rtl:mr-0 rtl:ml-0 md:ltr:ml-64 md:rtl:mr-64"
+            aria-expanded="false">
 
-        <main x-data="main()" class="wrapper overflow-x-hidden bg-gray-100 dark:bg-gray-900 dark:bg-opacity-40">
+            <x-nav />
+
+            <main class="-mt-2 flex-grow pt-20">
+                {{ $slot }}
+            </main>
+
+            <x-footer />
+        </div>
+
+        {{-- <x-nav />
+
+        <!-- Page Content -->
+        <main class="-mt-2 pt-20">
             {{ $slot }}
-        </main>
+        </main> --}}
     </div>
 </body>
 

@@ -1,8 +1,8 @@
 <nav id="sidebar-menu" x-description="Mobile menu" x-bind:aria-expanded="open"
     :class="{ 'w-64 md:w-0': open, 'w-0 md:w-64': !(open) }"
     class="fixed h-screen w-0 bg-white shadow-sm transition-all duration-500 ease-in-out dark:bg-gray-800 md:w-64"
-    aria-expanded="false">
-    <div class="scrollbars h-full overflow-y-auto">
+    aria-expanded="false" x-ref="nav">
+    <div class="scrollbars relative h-full overflow-auto">
         <!--logo-->
         <div class="mh-18 py-5 text-center">
             <a href="#" class="relative">
