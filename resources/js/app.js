@@ -1,8 +1,13 @@
 import './bootstrap';
 
+// style imports
+import 'flatpickr/dist/themes/airbnb.css'
+
 import Alpine from 'alpinejs';
+import flatpickr from "flatpickr";
 
 window.Alpine = Alpine;
+window.flatpickr = flatpickr;
 
 document.addEventListener('alpine:init', () => {
     Alpine.data('main', () => ({
