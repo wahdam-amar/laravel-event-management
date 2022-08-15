@@ -4,7 +4,7 @@
     'description' => null,
 ])
 
-<div class="mb-6 rounded-lg bg-white p-6 shadow-lg dark:bg-gray-800">
+<div {{ $attributes->merge(['class' => 'mb-6 rounded-lg bg-white p-6 shadow-lg dark:bg-gray-800']) }}>
     <div class="flex flex-row justify-between pb-6">
 
         @if (isset($title) || isset($description))

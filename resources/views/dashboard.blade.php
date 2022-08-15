@@ -7,11 +7,62 @@
 
 
     <div class="mx-auto p-2">
-        <div class="mb-2 overflow-hidden bg-white shadow-sm sm:rounded-lg">
-            <div class="border-b border-gray-200 bg-white p-6">
-                You're logged in!
-            </div>
+
+        <div class="flex flex-row justify-between gap-2 md:gap-4">
+            <x-card title="detail event" class="flex-1"></x-card>
+            <x-card title="detail event"></x-card>
         </div>
+
+        <x-card title="buttons">
+            <div class="mb-6">
+                <button type="button"
+                    class="mb-3 inline-block rounded border border-indigo-500 bg-indigo-500 py-2 px-4 text-center leading-5 text-gray-100 hover:border-indigo-600 hover:bg-indigo-600 hover:text-white hover:ring-0 focus:border-indigo-600 focus:bg-indigo-600 focus:outline-none focus:ring-0">Primary</button>
+                <button type="button"
+                    class="mb-3 inline-block rounded border border-green-500 bg-green-500 py-2 px-4 text-center leading-5 text-gray-100 hover:border-green-600 hover:bg-green-600 hover:text-white hover:ring-0 focus:border-green-600 focus:bg-green-600 focus:outline-none focus:ring-0">Success</button>
+                <button type="button"
+                    class="mb-3 inline-block rounded border border-red-500 bg-red-500 py-2 px-4 text-center leading-5 text-gray-100 hover:border-red-600 hover:bg-red-600 hover:text-white hover:ring-0 focus:border-red-600 focus:bg-red-600 focus:outline-none focus:ring-0">Danger</button>
+                <button type="button"
+                    class="mb-3 inline-block rounded border border-yellow-300 bg-yellow-300 py-2 px-4 text-center leading-5 text-gray-800 hover:border-yellow-400 hover:bg-yellow-400 hover:text-gray-900 hover:ring-0 focus:border-yellow-400 focus:bg-yellow-400 focus:outline-none focus:ring-0">Warning</button>
+                <button type="button"
+                    class="mb-3 inline-block rounded border border-indigo-300 bg-indigo-300 py-2 px-4 text-center leading-5 text-gray-800 hover:border-indigo-500 hover:bg-indigo-500 hover:text-gray-900 hover:ring-0 focus:border-indigo-500 focus:bg-indigo-500 focus:outline-none focus:ring-0">Info</button>
+                <button type="button"
+                    class="mb-3 inline-block rounded border border-gray-100 bg-gray-100 py-2 px-4 text-center leading-5 text-gray-800 hover:border-gray-200 hover:bg-gray-200 hover:text-gray-900 hover:ring-0 focus:border-gray-200 focus:bg-gray-200 focus:outline-none focus:ring-0">Light</button>
+                <button type="button"
+                    class="mb-3 inline-block rounded border border-gray-900 bg-gray-900 py-2 px-4 text-center leading-5 text-gray-100 hover:border-black hover:bg-black hover:text-white hover:ring-0 focus:border-black focus:bg-black focus:outline-none focus:ring-0">Dark</button>
+                <button type="button"
+                    class="mb-3 mr-2 inline-block cursor-not-allowed rounded border border-indigo-500 bg-indigo-500 py-2 px-4 text-center leading-5 text-gray-100 opacity-70"
+                    disabled>Primary</button>
+            </div>
+
+            <div class="mb-6">
+                <button type="button"
+                    class="mb-3 inline-block rounded border border-indigo-500 bg-transparent py-2 px-4 text-center leading-5 text-indigo-500 hover:border-indigo-500 hover:bg-indigo-500 hover:text-gray-100 hover:ring-0 focus:border-indigo-500 focus:bg-indigo-500 focus:text-gray-100 focus:outline-none focus:ring-0">Primary</button>
+                <button type="button"
+                    class="mb-3 inline-block rounded border border-green-500 bg-transparent py-2 px-4 text-center leading-5 text-green-500 hover:border-green-500 hover:bg-green-500 hover:text-white hover:ring-0 focus:border-green-500 focus:bg-green-500 focus:text-white focus:outline-none focus:ring-0">Success</button>
+                <button type="button"
+                    class="mb-3 inline-block rounded border border-red-500 bg-transparent py-2 px-4 text-center leading-5 text-red-500 hover:border-red-500 hover:bg-red-500 hover:text-white hover:ring-0 focus:border-red-500 focus:bg-red-500 focus:text-white focus:outline-none focus:ring-0">Danger</button>
+                <button type="button"
+                    class="mb-3 inline-block rounded border border-yellow-500 bg-transparent py-2 px-4 text-center leading-5 text-yellow-500 hover:border-yellow-500 hover:bg-yellow-500 hover:text-gray-100 hover:ring-0 focus:border-yellow-500 focus:bg-yellow-500 focus:text-gray-900 focus:outline-none focus:ring-0">Warning</button>
+                <button type="button"
+                    class="mb-3 inline-block rounded border border-indigo-300 bg-transparent py-2 px-4 text-center leading-5 text-indigo-300 hover:border-indigo-300 hover:bg-indigo-300 hover:text-gray-900 hover:ring-0 focus:border-indigo-300 focus:bg-indigo-300 focus:text-gray-900 focus:outline-none focus:ring-0">Info</button>
+                <button type="button"
+                    class="mb-3 inline-block rounded border border-gray-100 bg-transparent py-2 px-4 text-center leading-5 text-gray-100 hover:border-gray-200 hover:bg-gray-200 hover:text-gray-900 hover:ring-0 focus:border-gray-200 focus:bg-gray-200 focus:text-gray-900 focus:outline-none focus:ring-0">Light</button>
+                <button type="button"
+                    class="mb-3 inline-block rounded border border-gray-900 bg-transparent py-2 px-4 text-center leading-5 text-gray-900 hover:border-black hover:bg-black hover:text-white hover:ring-0 focus:border-black focus:bg-black focus:text-white focus:outline-none focus:ring-0">Dark</button>
+            </div>
+        </x-card>
+
+
+        <x-card title="flatpickr " description="flatpickr ">
+            <div class="mb-6" x-data x-init="flatpickr($refs.input, {});">
+                <label for="datepick" class="mb-2 inline-block">Date picker</label>
+                <div id="datepicks" class="flex flex-col justify-center md:flex-row md:justify-between">
+                    <input id="datepick" x-ref="input"
+                        class="datepick relative w-full overflow-x-auto rounded border border-gray-300 bg-white py-2 px-4 text-sm leading-5 text-gray-800 focus:border-gray-400 focus:outline-none focus:ring-0 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-300 dark:focus:border-gray-600"
+                        type="text" name="start">
+                </div>
+            </div>
+        </x-card>
 
         <x-card title="hallo" description="hallo all">
             <x-slot name="action">
