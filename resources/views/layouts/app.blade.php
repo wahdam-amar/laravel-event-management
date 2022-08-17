@@ -19,15 +19,6 @@
     class="scroll-smooth font-sans text-base font-normal text-gray-600 antialiased dark:bg-gray-800 dark:text-gray-400">
     <div class="wrapper min-h-screen overflow-x-hidden bg-gray-100 dark:bg-gray-900 dark:bg-opacity-40"
         x-data="main()">
-        {{-- @include('layouts.navigation') --}}
-
-        <!-- Page Heading -->
-        {{-- <header class="bg-white shadow">
-            <div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
-                {{ $header }}
-            </div>
-        </header> --}}
-
 
         <x-sidebar />
 
@@ -48,13 +39,6 @@
 
             <x-footer />
         </div>
-
-        {{-- <x-nav />
-
-        <!-- Page Content -->
-        <main class="-mt-2 pt-20">
-            {{ $slot }}
-        </main> --}}
     </div>
 </body>
 

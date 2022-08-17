@@ -458,7 +458,7 @@
                       <span title="online"
                           class="absolute -bottom-0.5 flex h-3 w-3 justify-center rounded-full border border-white bg-green-500 text-center ltr:right-1 rtl:left-1"></span>
                   </div>
-                  <span class="hidden self-center ltr:ml-1 rtl:mr-1 md:block">Ari Budin</span>
+                  <span class="hidden self-center ltr:ml-1 rtl:mr-1 md:block">{{ auth()->user()->name }}</span>
               </a>
               <ul x-show="open" @click.away="open = false" x-transition:enter="transition-all duration-200 ease-out"
                   x-transition:enter-start="transform opacity-0 scale-95"
@@ -480,10 +480,11 @@
                               </svg>
                           </div>
                           <div class="w-2/3 max-w-full flex-shrink px-4 ltr:pl-1 rtl:pr-1">
-                              <div class="font-bold"><a href="#"
-                                      class="text-gray-800 hover:text-indigo-500 dark:text-gray-300">Ari
-                                      Budin</a></div>
-                              <div class="text-gray mt-1 text-sm">Professional Front end developer.</div>
+                              <div class="font-bold">
+                                  <a href="#"
+                                      class="text-gray-800 hover:text-indigo-500 dark:text-gray-300">{{ auth()->user()->name }}</a>
+                              </div>
+                              {{-- <div class="text-gray mt-1 text-sm">Professional Front end developer.</div> --}}
                           </div>
                       </div>
                   </li>
