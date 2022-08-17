@@ -39,7 +39,26 @@ document.addEventListener('alpine:init', () => {
                   }
             })
         }
-    }))
+    }));
+
+    let time_24 = {
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+        time_24hr: true
+    }
+
+    let calendar = {
+        inline: true,
+    }
+
+    Alpine.directive('time', el => {
+        flatpickr(el, time_24);
+    })
+
+    Alpine.directive('calendar', el => {
+        flatpickr(el, calendar);
+    })
 })
 
 Alpine.start();
