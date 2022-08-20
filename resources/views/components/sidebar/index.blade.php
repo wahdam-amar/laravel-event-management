@@ -5,12 +5,11 @@
     <div class="scrollbars relative h-full overflow-auto">
         <!--logo-->
         <div class="mh-18 py-5 text-center">
-            <a href="#" class="relative">
+            <a href="{{ route('dashboard') }}" class="relative">
                 <h2 class="hidden-compact max-h-9 overflow-hidden px-4 text-2xl font-semibold text-gray-200">
                     <span class="text-gray-700 dark:text-gray-200">{{ config('app.name', 'Laravel') }}</span>
                 </h2>
                 <h2 class="logo-compact mx-auto hidden text-3xl font-semibold">
-                    <!-- <img class="-mt-1 inline-block h-auto w-7" src="src/img/logo.png"> -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="-mt-1 inline-block h-7 w-7"
                         viewBox="0 0 300.000000 300.000000">
                         <g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)" fill="currentColor"
