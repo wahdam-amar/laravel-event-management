@@ -113,6 +113,7 @@
                                     class="relative w-full overflow-x-auto rounded border border-gray-300 bg-white py-2 px-4 leading-5 text-gray-800 focus:border-gray-400 focus:outline-none focus:ring-0 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-300 dark:focus:border-gray-600"
                                     placeholder="Last name" aria-label="Last name">
                             </div>
+
                         </div>
 
                         <div class="-mx-4 mb-6 flex flex-row flex-wrap">
