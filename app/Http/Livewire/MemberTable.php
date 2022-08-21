@@ -16,28 +16,28 @@ class MemberTable extends DataTableComponent
         $this->setTableWrapperAttributes([
             'default' => false,
             'class' => 'shadow border-b border-gray-200 dark:border-gray-700 sm:rounded-lg mb-6 overflow-y-auto',
-          ]);
+        ]);
         $this->setTheadAttributes([
             'class' => 'dark:bg-gray-800',
-          ]);
+        ]);
     }
 
     public function columns(): array
     {
         return [
-            Column::make("Id", "id")
+            Column::make('Id', 'id')
                 ->sortable(),
-            Column::make("User id", "user_id")
+            Column::make('User id', 'user_id')
                 ->sortable(),
-            Column::make("Name", "name")
+            Column::make('Name', 'name')
                 ->sortable(),
-            Column::make("Photo", "photo")
+            Column::make('Photo', 'photo')
                 ->sortable(),
-            Column::make("Address", "address")
+            Column::make('Address', 'address')
                 ->sortable(),
-            Column::make("Created at", "created_at")
+            Column::make('Created at', 'created_at')
                 ->sortable(),
-            Column::make("Updated at", "updated_at")
+            Column::make('Updated at', 'updated_at')
                 ->sortable(),
         ];
     }

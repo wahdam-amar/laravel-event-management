@@ -31,5 +31,4 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('member', MemberController::class);
 });
 
-
 require __DIR__.'/auth.php';
