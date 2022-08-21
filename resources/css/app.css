@@ -41,3 +41,5 @@
   .scrollbars.show::-webkit-scrollbar-thumb, .scrollbars:hover::-webkit-scrollbar-thumb {
     background: #777;
   }
+
+  [x-cloak] { display: none !important; }
