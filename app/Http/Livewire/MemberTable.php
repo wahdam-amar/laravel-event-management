@@ -27,7 +27,7 @@ class MemberTable extends DataTableComponent
 
         $this->setTheadAttributes([
             'class' => 'dark:bg-gray-800',
-          ]);
+        ]);
     }
 
     public function columns(): array
