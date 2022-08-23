@@ -7,7 +7,7 @@
 
 
     <div class="mx-auto p-2">
-        <x-card title="Member">
+        <x-card title="Member" class="relative">
 
             <div class="mb-3 flex justify-between">
                 <a href="{{ route('member.create') }}"
@@ -31,7 +31,6 @@
             </div>
 
             <livewire:member-table />
-
 
         </x-card>
     </div>

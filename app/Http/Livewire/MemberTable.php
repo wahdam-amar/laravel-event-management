@@ -3,17 +3,16 @@
 namespace App\Http\Livewire;
 
 use App\Models\Member;
+use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 
 class MemberTable extends DataTableComponent
 {
-    protected $model = Member::class;
-
-    public $columnSearch = [
-        'name' => null,
-        'email' => null,
-    ];
+    public function builder(): Builder
+    {
+        return Member::query()->with('user');
+    }
 
     public function configure(): void
     {
@@ -23,7 +22,7 @@ class MemberTable extends DataTableComponent
 
         $this->setTableWrapperAttributes([
             'default' => false,
-            'class' => 'shadow border-b border-gray-200 dark:border-gray-700 sm:rounded-lg mb-6 overflow-y-auto',
+            'class' => 'shadow border-b border-gray-200 dark:border-gray-700 rounded-none mb-6 overflow-y-auto',
           ]);
 
         $this->setTheadAttributes([
@@ -39,7 +38,8 @@ class MemberTable extends DataTableComponent
                 ->sortable(),
             Column::make("User id", "user.email")
                 ->sortable(),
-            Column::make("Name", "name"),
+            Column::make("Name", "name")
+            ->searchable(),
             Column::make("Address", "address"),
         ];
     }
