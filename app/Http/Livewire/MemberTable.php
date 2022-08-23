@@ -10,13 +10,22 @@ class MemberTable extends DataTableComponent
 {
     protected $model = Member::class;
 
+    public $columnSearch = [
+        'name' => null,
+        'email' => null,
+    ];
+
     public function configure(): void
     {
         $this->setPrimaryKey('id');
+
+        $this->setSearchEnabled();
+
         $this->setTableWrapperAttributes([
             'default' => false,
             'class' => 'shadow border-b border-gray-200 dark:border-gray-700 sm:rounded-lg mb-6 overflow-y-auto',
           ]);
+
         $this->setTheadAttributes([
             'class' => 'dark:bg-gray-800',
           ]);
@@ -26,19 +35,12 @@ class MemberTable extends DataTableComponent
     {
         return [
             Column::make("Id", "id")
+                ->searchable()
                 ->sortable(),
-            Column::make("User id", "user_id")
+            Column::make("User id", "user.email")
                 ->sortable(),
-            Column::make("Name", "name")
-                ->sortable(),
-            Column::make("Photo", "photo")
-                ->sortable(),
-            Column::make("Address", "address")
-                ->sortable(),
-            Column::make("Created at", "created_at")
-                ->sortable(),
-            Column::make("Updated at", "updated_at")
-                ->sortable(),
+            Column::make("Name", "name"),
+            Column::make("Address", "address"),
         ];
     }
 }
