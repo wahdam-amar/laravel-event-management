@@ -23,7 +23,7 @@ class MemberTable extends DataTableComponent
         $this->setTableWrapperAttributes([
             'default' => false,
             'class' => 'shadow border-b border-gray-200 dark:border-gray-700 rounded-none mb-6 overflow-y-auto',
-          ]);
+        ]);
 
         $this->setTheadAttributes([
             'class' => 'dark:bg-gray-800',
@@ -33,14 +33,14 @@ class MemberTable extends DataTableComponent
     public function columns(): array
     {
         return [
-            Column::make("Id", "id")
+            Column::make('Id', 'id')
                 ->searchable()
                 ->sortable(),
-            Column::make("User id", "user.email")
+            Column::make('User id', 'user.email')
                 ->sortable(),
-            Column::make("Name", "name")
+            Column::make('Name', 'name')
             ->searchable(),
-            Column::make("Address", "address"),
+            Column::make('Address', 'address'),
         ];
     }
 }
