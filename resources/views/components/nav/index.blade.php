@@ -40,7 +40,8 @@
           <div class="relative flex w-full flex-wrap items-stretch">
               <input type="text"
                   class="relative max-w-full flex-shrink flex-shrink flex-grow overflow-x-auto border border-gray-100 bg-gray-100 py-2 px-4 text-sm leading-5 text-gray-800 focus:border-gray-200 focus:outline-none focus:ring-0 ltr:rounded-l rtl:rounded-r dark:border-gray-700 dark:bg-gray-700 dark:text-gray-400 dark:focus:border-gray-600"
-                  placeholder="Search…" aria-label="Search">
+                  placeholder="Search…" aria-label="Search" :disabled="openSearch"
+                  @click.prevent="openSearch = true;$nextTick(() => { $refs.inputPallettes.focus() });">
               <div class="-mr-px flex">
                   <button
                       class="flex items-center border border-indigo-500 bg-indigo-500 py-2 px-4 leading-5 text-gray-100 hover:border-indigo-600 hover:bg-indigo-600 hover:text-white hover:ring-0 focus:border-indigo-600 focus:bg-indigo-600 focus:outline-none focus:ring-0 ltr:-ml-1 ltr:rounded-r rtl:-mr-1 rtl:rounded-l"
@@ -564,4 +565,6 @@
           </li>
       </ul>
   </nav>
+
+  <x-nav.search-palettes />
   <!-- End Navbar -->

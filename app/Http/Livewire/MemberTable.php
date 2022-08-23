@@ -11,7 +11,7 @@ class MemberTable extends DataTableComponent
 {
     public function builder(): Builder
     {
-        return Member::query()->with('user');
+        return Member::with('user');
     }
 
     public function configure(): void
@@ -33,14 +33,19 @@ class MemberTable extends DataTableComponent
     public function columns(): array
     {
         return [
-            Column::make('Id', 'id')
+            Column::make('Member Id', 'id')
                 ->searchable()
                 ->sortable(),
-            Column::make('User id', 'user.email')
+            Column::make('Email', 'user.email')
                 ->sortable(),
             Column::make('Name', 'name')
             ->searchable(),
             Column::make('Address', 'address'),
+            Column::make('Action', 'id')
+                    ->format(
+                        fn ($value, $row, Column $column) => view('components.table.action-livewire')
+                        ->with('edit', route('member.edit', $row->id))
+                    ),
         ];
     }
 }

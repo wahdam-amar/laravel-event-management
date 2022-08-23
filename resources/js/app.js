@@ -13,7 +13,7 @@ document.addEventListener('alpine:init', () => {
     Alpine.data('main', () => ({
         open: false,
         isDark: false,
-
+        openSearch: false,
         toggle() {
             this.open = ! this.open
         },
