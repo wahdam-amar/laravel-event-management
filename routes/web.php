@@ -31,4 +31,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('member', MemberController::class);
 });
 
+Route::get('/home', function () {
+    return view('homepage');
+})->name('home');
+
 require __DIR__.'/auth.php';
